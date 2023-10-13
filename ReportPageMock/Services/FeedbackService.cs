@@ -16,7 +16,7 @@ namespace ReportPageMock.Services
 
         private string GenerateRandomBranchCode()
         { 
-            string[] branchCode = { "Bank teller", "Banker", "Loan processor", "Mortgage consultant", "Credit analyst" };
+            string[] branchCode = { "001", "002", "003", "004", "005" };
 
             Random rand = new Random();
             var branch = rand.Next(branchCode.Length);
@@ -25,7 +25,7 @@ namespace ReportPageMock.Services
 
         private string GenerateBranchName()
         {        
-            string[] BranchNames = { "Bank teller", "Banker", "Loan processor", "Mortgage consultant", "Credit analyst" };
+            string[] BranchNames = { "Lagos, Aja", "Lagos, Aja", "Loan processor", "Mortgage consultant", "Credit analyst" };
 
             Random rand = new Random();
             var branchNameId = rand.Next(BranchNames.Length);
@@ -49,6 +49,7 @@ namespace ReportPageMock.Services
             FeedbackModels feedbackModels = new FeedbackModels();
 
             var staff = GenerateStaffDetails();
+            feedbackModels.Staff = staff;
             feedbackModels.StaffId = int.Parse(staff.StaffId);
             feedbackModels.StaffName = staff.StaffName;
             feedbackModels.BranchName = staff.BranchName;
